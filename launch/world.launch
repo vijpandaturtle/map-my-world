@@ -1,10 +1,24 @@
 <?xml version="1.0"?>
 
 <launch>
-<include file="$(find slam_project)/launch/robot_description.launch"/>
-<!--spawn a robot in gazebo world-->
+ <include file="$(find slam_project)/launch/robot_description.launch"/>
+ <arg name="world" default="empty"/>
+ <arg name="paused" default="false"/>
+ <arg name="use_sim_time" default="true"/>
+ <arg name="gui" default="true"/>
+ <arg name="headless" default="false"/>
+ <arg name="debug" default="false"/>
 
-<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false"
-output="screen" args="-urdf -param robot_description -model udacity_bot"/>
+ <include file="$(find gazebo_ros)/launch/empty_world.launch">
+ <arg name="world_name" default="$(find slam_project)/worlds/kitchen_dining.world"/>
+ <arg name="paused" default="$(arg paused)"/>
+ <arg name="use_sim_time" default="$(arg use_sim_time)"/>
+ <arg name="gui" default="$(arg gui)"/>
+ <arg name="headless" default="$(arg headless)"/>
+ <arg name="debug" default="$(arg debug)"/>
+ </include>
+
+ <!--spawning the robot model in gazebo -->
+ <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" args="-urdf -param robot_description -model udacity_bot"/>
 
 </launch>
