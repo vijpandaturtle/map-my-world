@@ -2,7 +2,7 @@
 
 xterm -e "source /home/workspace/catkin_ws/devel/setup.bash; roslaunch slam_project world.launch" &
 sleep 5
-xterm -e "source /home/workspace/catkin_ws/devel/setup.bash; roslaunch slam_project slam_project teleop.launch" &
+xterm -e "source /home/workspace/catkin_ws/devel/setup.bash; roslaunch slam_project teleop.launch" &
 sleep 5
 xterm -e "source /home/workspace/catkin_ws/devel/setup.bash; roslaunch slam_project mapping.launch" &
 sleep 5

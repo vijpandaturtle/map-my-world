@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <launch>
-     <node name="teleop" pkg="slam_project" type="teleop" args="-d $(find slam_project)/scripts/teleop">
-     <remap from="/teleop/cmd_vel" to="/cmd_vel"></remap>
+     <node name="teleop" pkg="slam_project" type="teleop.py" output="screen">
+     <remap from="/teleop/cmd_vel" to="/cmd_vel"/>
    </node>
 </launch>
