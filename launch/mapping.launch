@@ -26,7 +26,7 @@
         <remap from="rgb/camera_info" to="$(arg camera_info_topic)"/>
 
         <!-- RTAB-Map Output -->
-        <remap from="/rtabmap/grid_map" to="/map"/>
+        <remap from="grid_map" to="/map"/>
 
            <!-- Rate (Hz) at which new nodes are added to map -->
       <param name="Rtabmap/DetectionRate" type="string" value="1"/>
