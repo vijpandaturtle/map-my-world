@@ -10,6 +10,7 @@ project(slam_project)
 find_package(catkin REQUIRED COMPONENTS
     message_generation
     rospy
+    sensor_msgs
     )
 
 ## System dependencies are found with CMake's conventions
