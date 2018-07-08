@@ -197,6 +197,20 @@
    </inertial>
   </link>
 
+
+ <link name="camera_link_optical">
+ </link>
+
+ <joint name="camera_optical_joint" type="fixed">
+  <!-- these values have to be these values otherwise the gazebo camera
+      image won't be aligned properly with the frame it is supposedly
+      originating from -->
+  <origin xyz="0 0 0" rpy="${-pi/2} 0 ${-pi/2}"/>
+  <parent link="camera_rgbd_frame"/>
+  <child link="camera_link_optical"/>
+ </joint>
+
+
   <joint type="fixed" name="camera_rgbd_joint" >
     <origin xyz="0.001 0 0.001" rpy="0 0 0"/>
     <child link="camera_rgbd_frame" />
@@ -210,7 +224,7 @@
         <axis xyz="0 1 0" rpy="0 0 0"/>
    </joint>
 
- <link name="hokuyo">
+   <link name="hokuyo">
    <inertial>
       <mass value="0.1"/>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
