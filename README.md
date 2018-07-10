@@ -1,4 +1,4 @@
-# Home service Robot Project
+# SLAM : Map My World Project 
 
 In this project, I build a home service robot using a turtlebot that autonomously navigate to transport objects from one location to another.
 
